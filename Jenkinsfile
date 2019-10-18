@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("divyang97/dockerized-jenkins")
+        app = docker.build("pradeepsrivastava1/dockerized-jenkins")
     }
 
     stage('Test image') {
@@ -31,7 +31,7 @@ node {
                 echo "Trying to Push Docker Build to DockerHub"
 	    
 	    //withDockerRegistry(credentialsId: 'dokcerid', url: 'https://hub.docker.com/') {
-	    sh label: 'Docker Login', script: 'docker login --username "divyang97" --password "divyang97"'
+	    sh label: 'Docker Login', script: 'docker login --username "pradeepsrivastava1" --password "abcxyz@12345"'
     	    app.push("${env.BUILD_NUMBER}")
             app.push("latest")
 	//}
